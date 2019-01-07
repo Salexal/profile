@@ -10,9 +10,13 @@ header('Access-Control-Allow-Headers:x-requested-with,content-type');
 
 $rws_post =  file_get_contents('php://input') ;
 $mypost = json_decode($rws_post);
-$userName = (string)$mypost->userName;
+$username = (string)$mypost->userName;
 $password = (string)$mypost->passWord;
 $data = array("message"=>"success");
-if($userName==123&&$password==123)
-echo json_encode($data);
+if($username==123&&$password==123){
+    session_start();
+    $_SESSION['username']=$username;
+    echo json_encode($data);
+}
+
 ?>

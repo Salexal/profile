@@ -13,7 +13,7 @@ $mypost = json_decode($rws_post);
 $username = (string)$mypost->userName;
 $password = (string)$mypost->passWord;
 $data = array("message"=>"success");
-if($username==123&&$password==123){
+if($username==$password){
     session_start();
     $_SESSION['username']=$username;
     echo json_encode($data);

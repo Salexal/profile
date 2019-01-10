@@ -8,5 +8,6 @@ session_start();
 $data = array(
     'userName'=>$_SESSION['username']
 );
+
 echo json_encode($data);
 ?>
